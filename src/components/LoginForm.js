@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
 
 function LoginForm({ Login, error }) {
+// local details for the form
 const [details, setDetails] = useState({name: "", email: "", password: ""});
 
+// method to handle the submit
 const submitHandler = e => {
     e.preventDefault();
 
     Login(details);
 }
 
+    // INPUT TYPE: onChange is going to pass through the e event which holds the target value then it'll change
     return (
         <form onSubmit={submitHandler}>
             <div className="form-inner">
