@@ -3,14 +3,16 @@ import LoginForm from "./components/LoginForm";
 import logo from './logo.gif';
 
 function App() {
+  // this is where the fixed email and password is set, there's no database
   const adminUser = {
     email:"michelle@espeleta.com",
     password: "password"
   }
 
   const [user, setUser] = useState({email: ""});
-  const [error, setError] = useState("");
+  const [error, setError] = useState(""); // catch if details are correct or not
 
+  // this is going to be called if attempting to login
   const Login = details => {
     console.log(details);
 
@@ -43,7 +45,7 @@ function App() {
           <button onClick={Logout}>LOGOUT</button>
           </div>
       ) : (
-        <LoginForm Login={Login} error={error}/>
+        <LoginForm Login={Login} error={error}/> // needs to pass through the login and error
       )}
     </div>
   );
